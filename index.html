@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <script>
+        function updatePhoneCode() {
+            const countrySelect = document.getElementById("country");
+            const phoneCodeInput = document.getElementById("phoneCode");
+            const countryCodes = {
+                "Россия": "+7",
+                "США": "+1",
+                "Германия": "+49",
+                "Узбекистан": "+998"
+            };
+            phoneCodeInput.value = countryCodes[countrySelect.value];
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="country">Выберите страну:</label>
+        <select id="country" name="country" onchange="updatePhoneCode()">
+            <option value="Россия">Россия</option>
+            <option value="США">США</option>
+            <option value="Германия">Германия</option>
+            <option value="Узбекистан">Узбекистан</option>
+        </select>
+        <br><br>
+        <label for="phoneCode">Код телефона:</label>
+        <input type="text" id="phoneCode">
+    </form>
+    
+</body>
+</html>
